@@ -4,7 +4,8 @@ import urllib.request
 
 
 parser = ArgumentParser(description="check compatibility")
-parser.add_argument('input')
+parser.add_argument(
+    '--input', '-in', choices=["sierra", "high_sierra", "mojave", "catalina"], default="mojave")
 # parser.add_argument('--reactions', '-r', action="store_true")
 arguments = parser.parse_args()
 
