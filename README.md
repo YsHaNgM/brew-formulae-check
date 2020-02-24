@@ -1,3 +1,4 @@
 # brew-formulae-check
 Check homebrew formulae compatibility.
-Pass **catalina**, **mojave** or **high_sierra** as input to check compatibility.
+Run checker.py script, detect you macos version by default.
+Alternatively, pass **catalina**, **mojave**, **high_sierra** or **sierra** as input to check compatibility.
