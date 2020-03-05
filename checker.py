@@ -14,7 +14,7 @@ def get_sysname():
 
 parser = ArgumentParser(description="check compatibility")
 parser.add_argument(
-    '--input', '-in', choices=["sierra", "high_sierra", "mojave", "catalina"], default=get_sysname())
+    '--target', '-t', choices=["sierra", "high_sierra", "mojave", "catalina"], default=get_sysname())
 # parser.add_argument('--reactions', '-r', action="store_true")
 arguments = parser.parse_args()
 
