@@ -20,7 +20,7 @@ arguments = parser.parse_args()
 
 
 url = "https://formulae.brew.sh/api/formula.json"
-
+count = 0
 
 file = json.load(urllib.request.urlopen(url))
 for x in file:
@@ -30,3 +30,5 @@ for x in file:
         else:
             #print(json.dumps(x, sort_keys=True, indent=4, separators=(',', ':')))
             print(x['name'])
+            count += 1
+print(count)
