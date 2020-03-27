@@ -31,4 +31,4 @@ for x in file:
             #print(json.dumps(x, sort_keys=True, indent=4, separators=(',', ':')))
             print(x['name'])
             count += 1
-print(count)
+print(count, "incompatible formulae")
