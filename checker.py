@@ -4,7 +4,7 @@ import urllib.request
 import os
 
 macos_ver = {"sierra": 16, "high_sierra": 17, "mojave": 18, "catalina": 19}
-
+# macOS Kernel version Darwin
 
 def get_sysname():
     for name, ver in macos_ver.items():
@@ -14,7 +14,7 @@ def get_sysname():
 
 parser = ArgumentParser(description="check compatibility")
 parser.add_argument(
-    '--input', '-in', choices=["sierra", "high_sierra", "mojave", "catalina"], default=get_sysname())
+    '--target', '-t', choices=["sierra", "high_sierra", "mojave", "catalina"], default=get_sysname())
 # parser.add_argument('--reactions', '-r', action="store_true")
 arguments = parser.parse_args()
 
