@@ -6,6 +6,7 @@ import os
 macos_ver = {"sierra": 16, "high_sierra": 17, "mojave": 18, "catalina": 19}
 # macOS Kernel version Darwin
 
+
 def get_sysname():
     for name, ver in macos_ver.items():
         if int(os.uname().release.split('.', maxsplit=1)[0]) == ver:
@@ -25,7 +26,7 @@ count = 0
 file = json.load(urllib.request.urlopen(url))
 for x in file:
     if 'stable' in x['bottle']:
-        if arguments.input in x['bottle']['stable']['files']:
+        if arguments.target in x['bottle']['stable']['files']:
             pass
         else:
             #print(json.dumps(x, sort_keys=True, indent=4, separators=(',', ':')))
