@@ -1,7 +1,7 @@
 import json
-from argparse import ArgumentParser
-import urllib.request
 import os
+import urllib.request
+from argparse import ArgumentParser
 
 macos_ver = {"sierra": 16, "high_sierra": 17,
              "mojave": 18, "catalina": 19, "big_sur": 20}
