@@ -1,5 +1,6 @@
 import json
 import os
+import sys
 import urllib.request
 from argparse import ArgumentParser
 
@@ -9,9 +10,12 @@ macos_ver = {"sierra": 16, "high_sierra": 17,
 
 
 def get_sysname():
-    for name, ver in macos_ver.items():
-        if int(os.uname().release.split('.', maxsplit=1)[0]) == ver:
-            return name
+    if sys.platform.startswith('darwin'):
+        for name, ver in macos_ver.items():
+            if int(os.uname().release.split('.', maxsplit=1)[0]) == ver:
+                return name
+    else:
+        return os.name
 
 
 parser = ArgumentParser(description="check compatibility")
@@ -31,6 +35,6 @@ for x in file:
             pass
         else:
             #print(json.dumps(x, sort_keys=True, indent=4, separators=(',', ':')))
-            print(x['name'])
+            # print(x['name'])
             count += 1
 print(count, "incompatible formulae")
