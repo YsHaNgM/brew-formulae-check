@@ -7,7 +7,8 @@ from argparse import ArgumentParser
 
 macos_ver = {"sierra": 16, "high_sierra": 17,
              "mojave": 18, "catalina": 19, "big_sur": 20,
-             "monterey": 21, "ventura": 22}
+             "monterey": 21, "ventura": 22, "sonoma": 23,
+             "sequoia": 24}
 # macOS Kernel version Darwin
 
 
@@ -22,7 +23,7 @@ def get_sysname():
 
 parser = ArgumentParser(description="check compatibility")
 parser.add_argument(
-    '--target', '-t', choices=["sierra", "high_sierra", "mojave", "catalina", "big_sur", "monterey", "ventura"], default=get_sysname())
+    '--target', '-t', choices=["sierra", "high_sierra", "mojave", "catalina", "big_sur", "monterey", "ventura", "sonoma", "sequoia"], default=get_sysname())
 # parser.add_argument('--reactions', '-r', action="store_true")
 arguments = parser.parse_args()
 
@@ -30,13 +31,14 @@ arguments = parser.parse_args()
 url = "https://formulae.brew.sh/api/formula.json"
 count = 0
 
-file = json.load(urllib.request.urlopen(url, context=ssl.SSLContext(ssl.PROTOCOL_TLS)))
+file = json.load(urllib.request.urlopen(
+    url, context=ssl.SSLContext(ssl.PROTOCOL_TLS)))
 for x in file:
     if 'stable' in x['bottle']:
         if arguments.target in x['bottle']['stable']['files']:
             pass
         else:
-            #print(json.dumps(x, sort_keys=True, indent=4, separators=(',', ':')))
+            # print(json.dumps(x, sort_keys=True, indent=4, separators=(',', ':')))
             # print(x['name'])
             count += 1
 print(count, "incompatible formulae")
