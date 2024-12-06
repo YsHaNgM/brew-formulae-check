@@ -31,8 +31,9 @@ arguments = parser.parse_args()
 url = "https://formulae.brew.sh/api/formula.json"
 count = 0
 
+# ssl.create_default_context(Purpose.CLIENT_AUTH)
 file = json.load(urllib.request.urlopen(
-    url, context=ssl.SSLContext(ssl.PROTOCOL_TLS)))
+    url, context=ssl.create_default_context(ssl.Purpose.SERVER_AUTH)))
 for x in file:
     if 'stable' in x['bottle']:
         if arguments.target in x['bottle']['stable']['files']:
