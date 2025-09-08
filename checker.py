@@ -8,7 +8,7 @@ from argparse import ArgumentParser
 macos_ver = {"sierra": 16, "high_sierra": 17,
              "mojave": 18, "catalina": 19, "big_sur": 20,
              "monterey": 21, "ventura": 22, "sonoma": 23,
-             "sequoia": 24}
+             "sequoia": 24, "tahoe": 25}
 # macOS Kernel version Darwin
 
 
@@ -23,7 +23,7 @@ def get_sysname():
 
 parser = ArgumentParser(description="check compatibility")
 parser.add_argument(
-    '--target', '-t', choices=["sierra", "high_sierra", "mojave", "catalina", "big_sur", "monterey", "ventura", "sonoma", "sequoia"], default=get_sysname())
+    '--target', '-t', choices=["sierra", "high_sierra", "mojave", "catalina", "big_sur", "monterey", "ventura", "sonoma", "sequoia", "tahoe"], default=get_sysname())
 # parser.add_argument('--reactions', '-r', action="store_true")
 arguments = parser.parse_args()
 
