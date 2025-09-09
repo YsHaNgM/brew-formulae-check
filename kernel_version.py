@@ -5,8 +5,8 @@ from bs4 import BeautifulSoup
 import pandas as pd # Optional: to structure the data
 pd.options.mode.copy_on_write = True
 
-macos_ver = {"sierra": 16, "high_sierra": 17,
-             "mojave": 18, "catalina": 19}
+macos_ver = {'sierra': 16, 'high_sierra': 17,
+             'mojave': 18, 'catalina': 19}
 
 url = 'https://en.wikipedia.org/wiki/Darwin_(operating_system)'
 headers = {'User-Agent': 'CoolBot/0.0 (https://example.org/coolbot/; coolbot@example.org)'}

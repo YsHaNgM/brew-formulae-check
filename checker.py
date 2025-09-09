@@ -5,10 +5,10 @@ import urllib.request
 import ssl
 from argparse import ArgumentParser
 
-macos_ver = {"sierra": 16, "high_sierra": 17,
-             "mojave": 18, "catalina": 19, "big_sur": 20,
-             "monterey": 21, "ventura": 22, "sonoma": 23,
-             "sequoia": 24, "tahoe": 25}
+macos_ver = {'sierra': 16, 'high_sierra': 17,
+             'mojave': 18, 'catalina': 19, 'big_sur': 20,
+             'monterey': 21, 'ventura': 22, 'sonoma': 23,
+             'sequoia': 24, 'tahoe': 25}
 # macOS Kernel version Darwin
 
 
